@@ -1,0 +1,11 @@
+// Pseudocode is as follows
+// create int variables for the cost of each aspect of living
+// create an int variable for hourly wage
+// Create a double for the total cost per month, double so we can divide it by 4 to get weekly costs
+// Create a double for the weekly costs, which is the monthly cost divided by 4.
+// To get required hours to break even, divide the total cost per week by the hourly wage. This will tell you how many hours must be worked to meet the minimum amount of money requried.
+// Print out all of the above information
+// To save an additional $100 per month, we can tell that $100 is 10h, as $10 * 10h is $100. To distribute this properly over the course of a month, we must divide 10 by 4, which is 2.5.
+// We then add 2.5 hours per week to our requirement, and to check our answer we multiply everything by 4 again, and ensure we are making 1152, instead of 1052.
+// Assuming the math checks out, print the number of hours required per week to break even + 100.
+// qed

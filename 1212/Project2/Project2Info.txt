@@ -1,0 +1,17 @@
+References:
+Lab 3 and Lab 4
+CodingRooms text
+Calculator to double check my math
+
+Explanation of any special/additional features 
+No speciall features added
+
+Status
+Complete, fully executes the requested conversion functions
+
+Easy:
+Setting everything up to be ready to print the results of the conversion
+
+Hard:
+Making sure the math behind the conversion was correct
+For a while i also thought I had to find a way to import the Driver file before I realized I didn't need to since it was automatic.

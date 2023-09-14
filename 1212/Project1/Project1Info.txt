@@ -1,0 +1,11 @@
+References used:
+CodingRooms
+
+No special features were added.
+
+The project is complete and functional.
+
+The easy parts included designing the pseudocode, and actually coding the assignment
+
+The challenge was ensuring my math was correct. I overcame this by checking everything several times with a calculator, and making sure all of the numbers were, at the very least,
+reasonable.
