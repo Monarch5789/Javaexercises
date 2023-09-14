@@ -1,0 +1,5 @@
+All of these exercises are intended to be references for potential employment, as well as a record of my previous work.
+
+The files in this repository are NOT intended to serve as an answer key, or to be used by students currently going through 1212, 1213, or any future courses.
+
+If I find you have used my code, I will report you to the University.
