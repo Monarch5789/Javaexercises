@@ -1,0 +1,18 @@
+Part A, Answer Questions Here
+
+
+●In which package is the Rectangle class located?
+- Package: java.awt
+
+
+● What do you need to do in order to use the Rectangle class in your program? ● How many constructors does the Rectangle class have? 
+- import java.awt.Rectangle;
+- 7 Constructors
+
+
+● Find the errors in the following statements:  
+r = new Rectangle();  
+"r = new Rectangle();" is incorrect because the variable type must be declared first, meaning it must be "Rectangle r = new Rectangle();"
+
+r.translate(10, “Hello”); 
+- "r.translate(10, "Hello");" is incorrect because the method requires two integers, and will not accept a string.
