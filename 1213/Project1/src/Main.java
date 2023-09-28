@@ -31,12 +31,16 @@ public class Main {
                 curActiveUser.setBooksPurchased(curActiveUser.getBooksPurchased()+books01);
                 curActiveUser.setCDsPurchased(curActiveUser.getCompactDisksPurchased()+compactDisks01);
                 curActiveUser.setDVDsPurchased(curActiveUser.getDVDsPurchased()+movies01);
-                products order01 = new products(books01, movies01, compactDisks01, tempID);
+                
+                bookstore01.addProd(books01, movies01, compactDisks01, tempID);
+                products order01 = bookstore01.getProds().get(tempID-1);
+                order01.setTotalPurchaseCost(curActiveUser.getTotalSpent()+(books01 * 9.99) + (movies01 * 14.99) + (compactDisks01 * 2.99));
+                curActiveUser.setTotalSpent(order01.getTotalPurchaseCost());
                 System.out.println("You have ordered " + books01 + " book(s) " + movies01 + " movie(s), and " + compactDisks01 + " CD(s).");
                 order01.setNumberCDs(order01.getNumberCDs()-compactDisks01);
                 order01.setNumberDVDs(order01.getNumberDVDs()-movies01);
                 order01.setNumberofBooks(order01.getNumberOfBooks()-books01);
-                System.out.println("The store has " + order01.getNumberCDs() + " CDs Remaining, " + order01.getNumberDVDs() + " DVDs remaining, and " + order01.getNumberOfBooks() + " books remaining.");
+                System.out.println("The store has " + (order01.getNumberCDs()+10) + " CDs Remaining, " + (order01.getNumberDVDs()+10) + " DVDs remaining, and " + (order01.getNumberOfBooks()+10) + " books remaining.");
 
                 break;
 
@@ -68,10 +72,10 @@ public class Main {
                 case 3:
                 System.out.println("Please input member ID");
                 int ID03 = console.nextInt();
-                member tempMember = bookstore01.getMembers().get(ID03-1);
+                member tempMember = bookstore01.getMembers().get(ID03);
                     if(tempMember.getPremium()){
-                    System.out.println(tempMember.getPayMethod());
-                    System.out.println(tempMember.getFeeDue());
+                    System.out.println("Do you pay with a card? " + tempMember.getPayMethod());
+                    System.out.println("Is your payment due?" + tempMember.getFeeDue());
 
                     }
                     else{
@@ -83,13 +87,15 @@ public class Main {
                 System.out.println("Please input ID");
                 int tempID01 = console.nextInt();
                 member tempMember04 = bookstore01.getMembers().get(tempID01);
-                System.out.println(tempMember04.getPremium() + " " + tempMember04.getBooksPurchased() + " " + tempMember04.getCompactDisksPurchased() + " " +tempMember04.getDVDsPurchased() +" "+ tempMember04.getTotalSpent());
+                System.out.println(tempMember04.getPremium() + " " + tempMember04.getBooksPurchased() + " " + tempMember04.getCompactDisksPurchased() + " " +tempMember04.getDVDsPurchased() +" "+ tempMember04.getTotalSpent() + " Paying with card? " + tempMember04.getPayMethod());
 
                 break;
 
                 case 5: // view store inventory
-                //products temProducts = new products(0,0,0);
-                //System.out.println(order01.getNumberCDs() + " " + order01.getNumberDVDs() + " " + order01.getNumberOfBooks());
+                System.out.println("Viewing store inventory is only accessible to verified members, please input a user ID ");
+                int tempIDInv = console.nextInt();
+                products temProducts = bookstore01.getProds().get(tempIDInv-1);
+                System.out.println((temProducts.getNumberCDs()+10) + " " + (temProducts.getNumberDVDs()+10) + " " + (temProducts.getNumberOfBooks()+10));
                 break;
 
                 case 6: // exit

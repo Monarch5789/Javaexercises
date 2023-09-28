@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class BookStore {
     public ArrayList<member> allMembers = new ArrayList<member>();
+    public ArrayList<products> allProds = new ArrayList<products>();
     private static int nextID = 0;
     private boolean isTheStoreOpen = true;
 
@@ -61,4 +62,13 @@ public class BookStore {
         return allMembers;
     }
 
+    public ArrayList<products> getProds(){
+        return allProds;
+    }
+
+
+    public void addProd(int books, int CDs, int DVDs, int id){
+        products curNewOrder = new products(books, CDs, DVDs, id);
+        allProds.add(curNewOrder);
+    }
 }

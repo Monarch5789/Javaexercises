@@ -5,13 +5,23 @@ public class products {
     private double priceBook = 9.99;
     private double priceCD = 2.99;
     private double priceDVD = 14.99; 
+    private double totalPurchaseCost;
 
 
 
     public products(int numBooks, int numCDs, int numDVDs, int id){ // constructor for buying all
-        setNumberofBooks(numberOfBooks - numBooks);
-        setNumberCDs(numberOfCDs - numCDs);
-        setNumberDVDs(numberOfDVDs - numDVDs);
+        setNumberofBooks(getNumberOfBooks() - numBooks);
+        setNumberCDs(getNumberCDs() - numCDs);
+        setNumberDVDs(getNumberDVDs() - numDVDs);
+        
+        double totalPurchaseCost = ((numBooks * priceBook) + (numCDs * priceCD) + (numDVDs * priceDVD));
+        System.out.println(" \t Your total is $" + totalPurchaseCost);
+        
+    }
+        public products(int numBooks, int numCDs, int numDVDs){ // constructor for buying all
+        setNumberofBooks(getNumberOfBooks() - numBooks);
+        setNumberCDs(getNumberCDs() - numCDs);
+        setNumberDVDs(getNumberDVDs() - numDVDs);
         
         double totalPurchaseCost = ((numBooks * priceBook) + (numCDs * priceCD) + (numDVDs * priceDVD));
         System.out.println(" \t Your total is $" + totalPurchaseCost);
@@ -49,5 +59,12 @@ public class products {
     }
     public int getNumberDVDs(){ // get CDs
         return numberOfDVDs;
+    }
+    public void setTotalPurchaseCost(double h){
+        this.totalPurchaseCost = h;
+    }
+
+    public double getTotalPurchaseCost(){
+        return totalPurchaseCost;
     }
 }
