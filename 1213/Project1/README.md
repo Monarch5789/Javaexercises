@@ -1,6 +1,6 @@
 Unauthorized use prohibited.
 
-Copywright Aidan Perkins / UNC Charlotte College of Computing and Informatics
+Copywight Aidan Perkins / UNC Charlotte College of Computing and Informatics
 
 
 ## Getting Started
