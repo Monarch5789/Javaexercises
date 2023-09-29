@@ -27,6 +27,10 @@ public class products {
         System.out.println(" \t Your total is $" + totalPurchaseCost);
         
     }
+    
+    /** 
+     * @param 0
+     */
     public void setNumberofBooks(int h){ // set books
         if(h < 0){
             System.out.println("Number must be 0 or greater");
@@ -35,6 +39,11 @@ public class products {
             this.numberOfBooks = h;
         }
     }
+    
+    /** 
+     * @param h)if(h<0
+     * @return int
+     */
     public int getNumberOfBooks(){ // get books
         return numberOfBooks;
     }

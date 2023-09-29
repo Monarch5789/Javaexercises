@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class BookStore {
-    public ArrayList<member> allMembers = new ArrayList<member>();
-    public ArrayList<products> allProds = new ArrayList<products>();
+    private ArrayList<member> allMembers = new ArrayList<member>();
+    private ArrayList<products> allProds = new ArrayList<products>();
     private static int nextID = 0;
     private boolean isTheStoreOpen = true;
 
@@ -13,6 +13,10 @@ public class BookStore {
 
 
 
+    
+    /** 
+     * @return int
+     */
     public int getNextID(){
         return nextID;
     }
@@ -29,6 +33,12 @@ public class BookStore {
     }
 
 
+    
+    /** 
+     * @param isPremium
+     * @param payment
+     * @return int
+     */
     public int addMember(boolean isPremium, boolean payment ){
         boolean temp = false;
         if(isPremium){

@@ -36,15 +36,24 @@ public class member {
         }
     }
 
+    
+    /** 
+     * @param h)if(h<0
+     * @return int
+     */
     public int getID(){ // getID
         return id;
     }
 
-    public void setPremium(boolean t){ // set preem
+    
+    /** 
+     * @param h)if(h<0
+     */
+    public void setPremium(boolean t){ // set premium
         this.isPremium = t;
     }
 
-    public boolean getPremium(){ // get preem
+    public boolean getPremium(){ // get premium
         return isPremium;
     }
 
@@ -60,7 +69,7 @@ public class member {
     public int getBooksPurchased(){ // get books purchased
         return booksPurchased;
     }
-        public void setCDsPurchased(int h){ // set CDs purchased
+    public void setCDsPurchased(int h){ // set CDs purchased
         if(h<0){
             System.out.println("Number must be 0 or greater");
         }
@@ -69,7 +78,7 @@ public class member {
         }
     }
 
-        public int getCompactDisksPurchased(){ // get CDs purchased
+    public int getCompactDisksPurchased(){ // get CDs purchased
         return compactDisksPurchased;
     }
 
