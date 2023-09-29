@@ -1,0 +1,25 @@
+project1Info.txt
+
+1). Special Features: Order an item(s). Create a member. View payment methods. View Member Profile. View Store Inventory.
+2). Solution is complete, though there are limitations. All interactions will require a userID.
+3). The easy parts of the assignment were sitting down and actually writing out the code, as well as going through and debugging. I think the more challenging part was designing it from the ground up in the first place, and figuring out what methods and constructors would go in what classes. 
+4). Yes, I learned how to utilize ArrayLists to help create a temporary instance of an object in order to get information from an item in the ArrayList.
+
+/**
+    ITSC1213 FA2023 - D.I. von Briesen
+
+    Assignment Name: ITSC1213 Project 1 - Book Store
+    Description: The purpose of this project is to create a system that allows a bookstore owner to keep track of their inventory and members.
+    The program is currently capable of the following:
+    1) Registering new members (and determining whether or not a new member is a premium member or not)
+    2) Making an order of a number of CDs, DVDs, and Books (Note that inputting a number greater than the store's inventory will cause a transaction to be cancelled, though a record of the attempt will be left on the users profile)
+    3) Viewing payment methods for each user (Whether or not they have decided to pay via a card or cash)
+    4) Viewing a members profile, which will inform them if they are a premium member, the number of products they have purchased, as well as the total they have spent, and their payment method.
+    5) Viewing the stores inventory.
+    It should also be noted that all functions require an active user ID. Creating an order without a user will not work, nor will attempting to access the stores inventory.
+    
+
+    @author Aidan Perkins
+    @date 09/29/23
+    @version 1.0
+*/
