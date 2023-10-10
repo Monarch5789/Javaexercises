@@ -36,4 +36,15 @@ public class Person {
     public void display(){
         System.out.println("First Name: " + firstName + " Last Name: " + lastName + " \nID: " + id);
     }
+    public boolean equals(Object other){
+        if(other == null){
+            return false;
+        }
+        if(this.getClass() != other.getClass()){
+            return false;
+        }
+        return this.getId() == ((Person) other).getId();
+    }
+
+    
 }

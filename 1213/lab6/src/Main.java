@@ -14,6 +14,7 @@ public class Main {
 
         System.out.println("*** Part B ***");
         Student s1 = new Student("Xavier", "Cato", 900111222, "CS", 3.5, 75);
+        System.out.println(s1);
         s1.setTransfer(true);
         s1.setBalance(100);
         s1.addCourse("Java programming");
@@ -40,7 +41,7 @@ public class Main {
         Student s4 = new Student("Kimberly", "Bryant", 902, "EE", 3.0, 80);
 
         Professor prof1 = new Professor("Mary", "Castro", 300, "CS", 80000);
-
+        System.out.println(prof1);
         prof1.addAdvisee(s2);
         prof1.addAdvisee(s3);
         prof1.addAdvisee(s4);
@@ -58,6 +59,20 @@ public class Main {
         for(Student s : myAdvisees){
             System.out.println(s.getFirstName() + " " + s.getLastName());
         }
+        System.out.println(s1.equals(s4));
+        Student s5 = new Student("Xanvier", "Cato", 900111222, "CS", 3.5, 75);
+        System.out.println(s1.equals(s5));
 
+        System.out.println(s1.equals(prof1));
+        Person[] personArray = {s1, s2, prof1};
+        ArrayList<Person> personList = new ArrayList();
+        personList.add(s1);
+        personList.add(s2);
+        personList.add(prof1);
+        System.out.println("Content of personList: ");
+        for(Person person : personList){
+            System.out.println(person);
+        }
+        
     }
 }

@@ -126,7 +126,20 @@ public class Student extends Person{
         return false;
     }
 
+// Module 7 - Part A
+    public void display(){
+        System.out.println("Name: " + this.getFirstName() + " " + this.getLastName());
+        System.out.println("ID: " + this.getId() + "\tMajor: " + major);
+        System.out.println("GPA: " + gpa + "\tCredits Applied: " + credits);
+        System.out.println("Enrolled Courses:");
+        
+        for(int i = 0; i< enrolledCourses.size();i++){
+            System.out.println("\t" + enrolledCourses.get(i));
+        }
+    }
 
-
-
+    public String toString(){
+        return "Student - " + this.getFirstName() + " " + this.getLastName();
+    }
+    
 }

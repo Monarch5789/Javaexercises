@@ -69,4 +69,17 @@ public class Professor extends Person {
         }
         return false;
     }
-}
+
+    public void display(){
+        super.display();
+            System.out.println("Department: " + department + "\tSalary:" + salary);
+            System.out.println("Advisees: ");
+            for(Student s : advisees){
+                System.out.println("\t "  + s.getFirstName() +  " " + s.getLastName());
+            }
+        }
+        public String toString(){
+            return "Professor - " + this.getFirstName() + " " + this.getLastName();
+        }
+    }
+
