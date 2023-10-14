@@ -105,12 +105,12 @@ public class Main {
         // System.out.println(((Student) p4).getGPA());
         for(Person person : contactList){
             if(person instanceof Student && ((Student) person).getGPA() >= 3.5){
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+                System.out.println("Students eligible for scholarship: \n" + "\t" + person.toString());
             }
         }
         for(Person person : contactList){
             if(person instanceof Professor && ((Professor) person).getDepartment() == "CS"){
-                System.out.println(person.getFirstName() + " " + person.getLastName());
+                System.out.println("Professors in Computer Science: \n" + "\t" + person.toString());
             }
         }
     }
