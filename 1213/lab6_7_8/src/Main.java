@@ -63,9 +63,9 @@ public class Main {
         Student s5 = new Student("Xanvier", "Cato", 900111222, "CS", 3.5, 75);
         System.out.println(s1.equals(s5));
 
-        System.out.println(s1.equals(prof1));
-        Person[] personArray = {s1, s2, prof1};
-        ArrayList<Person> personList = new ArrayList();
+        //System.out.println(s1.equals(prof1));
+        //Person[] personArray = {s1, s2, prof1};
+        ArrayList<Person> personList = new ArrayList<Person>();
         personList.add(s1);
         personList.add(s2);
         personList.add(prof1);
