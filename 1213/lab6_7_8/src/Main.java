@@ -73,6 +73,52 @@ public class Main {
         for(Person person : personList){
             System.out.println(person);
         }
-        
+        System.out.println(" ");
+        System.out.println(" =============================== Module 8 ===============================");
+        System.out.println(" ");
+        ArrayList<Person> contactList = new ArrayList<Person>();
+        contactList.add(p);
+        contactList.add(s1);
+        contactList.add(s2);
+        contactList.add(s3);
+        contactList.add(s4);
+        contactList.add(prof1);
+        Person p2 = new Person("Elle", "Kambol", 800);
+        contactList.add(p2);
+
+        Professor prof2 = new Professor("Frank", "Black", 801, "Math", 85000);
+        contactList.add(prof2);
+
+        Student s6 = new Student("Grace", "Maxeem", 903, "Psychology", 3.4, 95);
+        contactList.add(s6);
+        for(Person person : contactList){
+            person.display();
+        }
+        System.out.println("================================ Module 8 Part B ================================");
+        for(Person person : contactList){
+            showProfile(person,903);
+        }
+        System.out.println("================================== Module 8 Part C ==================================");
+        Person p3 = new Student("Maya", "Adams",700,"Music",3.5,105);
+        System.out.println(((Student)p3).getGPA());
+        // Person p4 = new Person("Bob","Lowe", 701); // left in for the sake of showing full lab completion
+        // System.out.println(((Student) p4).getGPA());
+        for(Person person : contactList){
+            if(person instanceof Student && ((Student) person).getGPA() >= 3.5){
+                System.out.println(person.getFirstName() + " " + person.getLastName());
+            }
+        }
+        for(Person person : contactList){
+            if(person instanceof Professor && ((Professor) person).getDepartment() == "CS"){
+                System.out.println(person.getFirstName() + " " + person.getLastName());
+            }
+        }
+    }
+
+
+    public static void showProfile(Person p, int id){
+        if(p.getId() == id){
+            p.display();
+        }
     }
 }
