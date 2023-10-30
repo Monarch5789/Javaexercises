@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Adam Whaley and
+ * @author Adam Whaley and Aidan Perkins
  */
 public class Member {
     
     private String name;
     private int memberID;
     private boolean newsletterSubscribed;
-    private ArrayList<Dog> dogsOwned = new ArrayList();
-    private ArrayList<Cat> catsOwned = new ArrayList();
-    private ArrayList<ExoticPet> exoticPetsOwned = new ArrayList();
+    private ArrayList<Dog> dogsOwned = new ArrayList<Dog>();
+    private ArrayList<Cat> catsOwned = new ArrayList<Cat>();
+    private ArrayList<ExoticPet> exoticPetsOwned = new ArrayList<ExoticPet>();
      private double amountSpent = 0;
 
     public Member(String name, int memberID, boolean newsletterSubscribed) {

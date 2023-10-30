@@ -2,7 +2,7 @@ import java.util. *;
 
 /**
  *
- * @author Adam Whaley and 
+ * @author Adam Whaley and Aidan Perkins
  */
 
 
@@ -28,7 +28,9 @@ public class Main {
             switch (choice1) {
                 case 1:
                     System.out.println("-----------------------------------");
-                    purchase(ps, scnr, new ArrayList<Dog>());
+                    purchase(ps, scnr, new ArrayList<Pet>());
+                    
+                    
                     break;
                 case 2:
                     System.out.println("-----------------------------------");
@@ -49,10 +51,11 @@ public class Main {
         }
     }
 
-    private static void purchase(PetStore petStore, Scanner scnr, ArrayList<Dog> cart) {
+    private static void purchase(PetStore petStore, Scanner scnr, ArrayList<Pet> cart) {
         System.out.println("What type of pet are you here to purchase?");
         System.out.println("\t1. Dogs");
-        //System.out.println("\t2. Cats"); System.out.println("\t3. Exotic Pets");
+        System.out.println("\t2. Cats"); 
+        System.out.println("\t3. Exotic Pets");
 
         int petTypeChoice = scnr.nextInt();
 
@@ -104,10 +107,10 @@ public class Main {
         }
     }
 
-    private static void checkout(PetStore petStore, Scanner scnr, ArrayList<Dog> cart) {
+    private static void checkout(PetStore petStore, Scanner scnr, ArrayList<Pet> cart) {
         // calculate total
         double total = 0;
-        for (Dog pet : cart) {
+        for (Pet pet : cart) {
             total += pet.getPrice();
         }
         System.out.println(

@@ -1,19 +1,19 @@
 /**
  *
- * @author Adam Whaley and
+ * @author Adam Whaley and Aidan Perkins
  */
 
 import java.util. *;
 
-public class PetStore {
+public class PetStore implements PetStoreSpecification{
 
     private String storeName;
 
-    private ArrayList<Dog> availableDogs = new ArrayList();
-    private ArrayList<Cat> availableCats = new ArrayList();
-    private ArrayList<ExoticPet> availableExoticPets = new ArrayList();
-    private ArrayList<Member> memberList = new ArrayList();
-    private ArrayList<PremiumMember> premiumMemberList = new ArrayList();
+    private ArrayList<Dog> availableDogs = new ArrayList<Dog>();
+    private ArrayList<Cat> availableCats = new ArrayList<Cat>();
+    private ArrayList<ExoticPet> availableExoticPets = new ArrayList<ExoticPet>();
+    private ArrayList<Member> memberList = new ArrayList<Member>();
+    private ArrayList<PremiumMember> premiumMemberList = new ArrayList<PremiumMember>();
     private static int nextPetID = 1;
     private static int nextMemberID = 1;
 
