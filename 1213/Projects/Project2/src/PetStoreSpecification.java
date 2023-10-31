@@ -8,7 +8,7 @@ public interface PetStoreSpecification {
      * @param pets
      * @return
      *  */
-    public int adoptionDrive(ArrayList<Object> pets);   
+    public void adoptionDrive(ArrayList<Pet> pets);   
 
     /**
      * calculate and return the dollar armount for current inventory of pets

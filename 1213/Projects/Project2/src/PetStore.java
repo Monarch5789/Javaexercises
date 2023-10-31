@@ -154,4 +154,36 @@ public class PetStore implements PetStoreSpecification{
             memberList.add(new Member(name,getNextMemberID(), false));
         }
     }
+
+    public void adoptionDrive(ArrayList<Pet> Pets){
+
+    }
+
+    public double inventoryValue(){
+         double value = 0.0;
+         double valueDogs = 0;
+         double valueCats = 0;
+         double valueExoticPets = 0;
+
+         ArrayList<Dog> availableDogs = getAvailableDogs();
+         for(Dog dogs : availableDogs){
+            double tempPrice = dogs.getPrice();
+            valueDogs = tempPrice;
+
+         }
+         ArrayList<Cat> availableCats = getAvailableCats();
+         for(Cat cats : availableCats){
+            double tempPrice = cats.getPrice();
+            valueCats = tempPrice;
+         }
+         ArrayList<ExoticPet> availableExoticPets = getAvailableExoticPets();
+         for(ExoticPet exoticPets : availableExoticPets){
+            double tempPrice = exoticPets.getPrice();
+            valueExoticPets = tempPrice;
+         }
+         value = valueCats + valueDogs + valueExoticPets;
+         System.out.println(value);
+         // get available dogs, cats, exotic pets, then get the number of each available and multiply by appropriate prices, then add and return that value
+        return value;
+    }
 }

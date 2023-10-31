@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scnr = new Scanner(System. in);
-        PetStore ps = new PetStore("Insert Petstore name here");
+        PetStore ps = new PetStore("Ai's Petstore");
         System.out.println("**** Welcome to " + ps.getStoreName() + "****");
         while (true) {
 
@@ -29,18 +29,21 @@ public class Main {
                 case 1:
                     System.out.println("-----------------------------------");
                     purchase(ps, scnr, new ArrayList<Pet>());
-                    
-                    
+                    /** 
+                     * 
+                     * @TODO checkout 
+                    */
                     break;
                 case 2:
                     System.out.println("-----------------------------------");
                     registerNewMember(ps, scnr);
                     break;
-                case 3:
+                case 3: // Adoption Drive
                     break;
-                case 4:
+                case 4: // Check inventory
+                
                     break;
-                case 5:
+                case 5: // Link pet to owner
                     break;
                 case 6:
                     System.out.println("Thanks for visiting!");
@@ -104,6 +107,92 @@ public class Main {
                 System.out.println("Sorry! we currently have no dogs available.");
             }
 
+        }
+        else if(petTypeChoice == 2){ // cats
+            ArrayList<Cat> inventory = petStore.getAvailableCats();
+            if (!inventory.isEmpty()) {
+
+                System.out.println("Which of the following dogs would you like to purchase?:");
+
+                for (Cat pet : inventory) {
+                    System.out.println(
+                        "\t" + itemNum + ". $" + pet.getPrice() + " - " + pet.getBreed() + "(" + pet.getName() +
+                        ")"
+                    );
+                    itemNum++;
+                }
+                // get user selection for product to add arraylist (cart)
+                int choice = scnr.nextInt();
+                if (choice <= inventory.size()) {
+                    cart.add(inventory.get(choice - 1));
+                    //update inventory for this item
+                    petStore.removePet("cat", choice - 1);
+                    //cart summary
+                    System.out.println(
+                        "You have " + cart.size() + " items in your cart. Are you done shopping?"
+                    );
+                    System.out.println("\t1. Yes");
+                    System.out.println("\t2. No");
+
+                    int doneShopping = scnr.nextInt();
+                    if (doneShopping == 1) {
+                        //System.out.println("TO DO - CHEKOUT ");
+                        checkout(petStore, scnr, cart);
+                    } else if (doneShopping == 2) { // more shopping
+                        purchase(petStore, scnr, cart); // recursively call purchase(...) until done
+                    } else {
+                        System.out.println("Invalid Choice.");
+                    }
+                } else {
+                    System.out.println("Please enter a valid product number. Try again");
+                    purchase(petStore, scnr, cart);
+                }
+            } else {
+                System.out.println("Sorry! we currently have no cats available.");
+            }
+        }
+        else if(petTypeChoice == 3){
+            ArrayList<ExoticPet> inventory = petStore.getAvailableExoticPets();
+            if (!inventory.isEmpty()) {
+
+                System.out.println("Which of the following dogs would you like to purchase?:");
+
+                for (ExoticPet pet : inventory) {
+                    System.out.println(
+                        "\t" + itemNum + ". $" + pet.getPrice() + " - " + pet.getSpecies() + "(" + pet.getName() +
+                        ")"
+                    );
+                    itemNum++;
+                }
+                // get user selection for product to add arraylist (cart)
+                int choice = scnr.nextInt();
+                if (choice <= inventory.size()) {
+                    cart.add(inventory.get(choice - 1));
+                    //update inventory for this item
+                    petStore.removePet("exoticPet", choice - 1);
+                    //cart summary
+                    System.out.println(
+                        "You have " + cart.size() + " items in your cart. Are you done shopping?"
+                    );
+                    System.out.println("\t1. Yes");
+                    System.out.println("\t2. No");
+
+                    int doneShopping = scnr.nextInt();
+                    if (doneShopping == 1) {
+                        //System.out.println("TO DO - CHEKOUT ");
+                        checkout(petStore, scnr, cart);
+                    } else if (doneShopping == 2) { // more shopping
+                        purchase(petStore, scnr, cart); // recursively call purchase(...) until done
+                    } else {
+                        System.out.println("Invalid Choice.");
+                    }
+                } else {
+                    System.out.println("Please enter a valid product number. Try again");
+                    purchase(petStore, scnr, cart);
+                }
+            } else {
+                System.out.println("Sorry! we currently have no exotic pets available.");
+            }
         }
     }
 

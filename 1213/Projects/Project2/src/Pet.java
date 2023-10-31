@@ -58,16 +58,14 @@ public abstract class Pet implements Comparable<Pet>{
         this.weight = weight;
     }
     public int compareTo(Pet o){
-        double sWeight = this.getWeight();
-        double oWeight = o.getWeight();
-
-        if(sWeight > oWeight){
+        double sWeight = o.getWeight();
+        
+        if(sWeight > 50.0){
+            System.out.println("This dog is bigger than 50lbs");
             return 1;
         }
-        else if(sWeight < oWeight){
-            return -1;
-        }
         else{
+            System.out.println("This dog is smaller than 50 lbs");
             return 0;
         }
     }
