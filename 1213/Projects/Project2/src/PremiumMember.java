@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * @author Adam Whaley and Aidan Perkins
  */
 
-public class PremiumMember {
+public class PremiumMember extends Member{
     
     private String name;
     private int memberID;
@@ -17,9 +17,7 @@ public class PremiumMember {
     private double amountSpent = 0;
 
     public PremiumMember(String name, int memberID, boolean newsletterSubscribed, boolean duesPaid) {
-        this.name = name;
-        this.memberID = memberID;
-        this.newsletterSubscribed = newsletterSubscribed;
+        super(name, memberID, newsletterSubscribed);
         this.duesPaid = duesPaid;
     }
 
@@ -32,9 +30,9 @@ public class PremiumMember {
     }
     
     
-     public String getName() {
-        return name;
-    }
+    //  public String getName() {
+    //     return this.name;
+    // }
 
     public int getMemberID() {
         return memberID;

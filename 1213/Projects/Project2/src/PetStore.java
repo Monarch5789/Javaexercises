@@ -71,6 +71,8 @@ public class PetStore implements PetStoreSpecification{
         memberList.add(member1);
 
         PremiumMember member2 = new PremiumMember("Sage", getNextMemberID(), false, false);
+        //PremiumMember member3 = new PremiumMember("Sage1", getNextMemberID(), false, false);
+        //premiumMemberList.add(member3);
         premiumMemberList.add(member2);
         member2.addExoticPet(
             new ExoticPet("Smaug", "Bearded Dragon", "Male", 5, 1, 0, 0)
@@ -156,7 +158,18 @@ public class PetStore implements PetStoreSpecification{
     }
 
     public void adoptionDrive(ArrayList<Pet> Pets){
+        for(Pet x : Pets){
+            if(x instanceof Cat){
+                availableCats.add((Cat) x);
 
+            }
+            else if(x instanceof Dog){
+                availableDogs.add((Dog) x);
+            }
+            else if(x instanceof ExoticPet){
+                availableExoticPets.add((ExoticPet) x);
+            }
+        }
     }
 
     public double inventoryValue(){

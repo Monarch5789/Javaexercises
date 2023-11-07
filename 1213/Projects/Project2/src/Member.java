@@ -20,6 +20,7 @@ public class Member {
         this.name = name;
         this.memberID = memberID;
         this.newsletterSubscribed = newsletterSubscribed;
+        
     }
 
     public String getName() {

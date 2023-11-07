@@ -39,11 +39,114 @@ public class Main {
                     registerNewMember(ps, scnr);
                     break;
                 case 3: // Adoption Drive
+                ArrayList<Pet> newPets = new ArrayList<Pet>();
+                System.out.println("How many pets are being adopted?");
+                
+                int numAdoptionDrive = scnr.nextInt();
+                for(int i = 0; i < numAdoptionDrive; i++){
+                    System.out.println("Please input the new pets name");
+                    scnr.nextLine();
+                    String tempPetName = scnr.nextLine();
+                    System.out.println("Please input the new pets Sex: M/F");
+                    String tempPetSex = scnr.nextLine().toLowerCase();
+                    if (tempPetSex == "m"){
+                        tempPetSex = "Male";
+                    }
+                    else if (tempPetSex == "f"){
+                        tempPetSex = "Female";
+                    }
+                    System.out.println("Please input the new pets age: ");
+                    int tempPetAge = scnr.nextInt();
+                    System.out.println("Please input the new pets weight: ");
+                    double tempPetWeight = scnr.nextDouble();
+                    System.out.println("What is this pets ID?: ");
+                    int tempPetID = scnr.nextInt();
+                    System.out.println("What is the new pets price?: ");
+                    double tempPetPrice = scnr.nextDouble();
+                    scnr.nextLine();
+                    System.out.println("Is the new pet a dog, a cat, or an exotic animal? (D/C/E)");
+                    String tempPetSpecies = scnr.nextLine().toLowerCase();
+                    //System.out.println(tempPetSpecies);
+                    if(tempPetSpecies.equalsIgnoreCase("d")){
+                        System.out.println("What breed of dog is this?");
+                        String tempDogBreed = scnr.nextLine();
+                        Dog newDog = new Dog(tempPetName, tempDogBreed, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
+                        newPets.add(newDog);
+                    }
+                    else if(tempPetSpecies.equalsIgnoreCase("c")){
+                        System.out.println("What breed of cat is this? ");
+                        String tempCatBreed = scnr.nextLine();
+                        Cat newCat = new Cat(tempPetName, tempCatBreed, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
+                        newPets.add(newCat);
+                    }
+                    else if(tempPetSpecies.equalsIgnoreCase("e")){
+                        System.out.println("What species of exotic animal is this? ");
+                        String tempExoticSpecies = scnr.nextLine();
+                        ExoticPet newExoticPet = new ExoticPet(tempPetName, tempExoticSpecies, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
+                        newPets.add(newExoticPet);
+                    }
+                    else{
+                        System.out.println("That is not a valid input, please input D, C, or E");
+                    }
+                    ps.adoptionDrive(newPets);
+
+                    //Pet newPet = new Pet();
+                }
                     break;
                 case 4: // Check inventory
                 
                     break;
                 case 5: // Link pet to owner
+                    System.out.println("Registering a new pet to an owner. \n Input the owner name: ");
+                    
+                    scnr.nextLine();
+                    String tempOwnerName = scnr.nextLine();
+                    Member petOwner = null;
+                    for (Member member : ps.getMemberList()){
+                        if(member.getName().equalsIgnoreCase(tempOwnerName)){
+                            petOwner = member;
+                            //break;
+                        }
+                    }
+                    if(petOwner == null){
+                        for(PremiumMember premiumMember : ps.getPremiumMemberList()){
+                            if(premiumMember.getName().equalsIgnoreCase(tempOwnerName)){
+                                petOwner = premiumMember;
+                                //break;
+                            }
+                        }
+                    }
+                    if(petOwner != null){
+                        System.out.println("What type of pet are you registering? D/C/E");
+                        String tempPetType = scnr.nextLine().toLowerCase();
+                        if(tempPetType.equalsIgnoreCase("d")){
+                            ArrayList<Dog> availableDogs = ps.getAvailableDogs();
+                            if(availableDogs.size() == 0){
+                                System.out.println("There are no dogs to register.");
+                            }
+                            else{
+                                System.out.println("Pick a dog to register. ");
+                                for(int i = 0; i < availableDogs.size(); i++){
+                                    Dog dog = availableDogs.get(i);
+                                    System.out.println((i + 1) + ". " + dog.getName() + " ID: " + dog.getID());
+
+                                }
+                                int choice = scnr.nextInt();
+                                if(choice >= 1 && choice <= availableDogs.size()){
+                                    Dog chosenOne = availableDogs.remove(choice - 1);
+                                    petOwner.addDog(chosenOne);
+                                    System.out.println("Selected dog has been registered to: " + petOwner.getName());
+                                }
+                                else{
+                                    System.out.println("You have not selected a dog on the list, please try again");
+                                }
+                            }
+                            
+                        }
+
+                    }
+                
+
                     break;
                 case 6:
                     System.out.println("Thanks for visiting!");
