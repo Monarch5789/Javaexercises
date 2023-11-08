@@ -22,8 +22,22 @@ public class Main {
             System.out.println("\t4. Check current inventory");
             System.out.println("\t5. Register new pet to Owner profile");
             System.out.println("\t6. Exit");
+            System.out.println("\t7. Compare the price of two pets.");
 
             int choice1 = scnr.nextInt();
+            ArrayList<Pet> allPets = new ArrayList<Pet>();
+            ArrayList<Cat> allCats = ps.getAvailableCats();
+            ArrayList<Dog> allDogs = ps.getAvailableDogs();
+            ArrayList<ExoticPet> allExoticPets = ps.getAvailableExoticPets();
+            for(Dog dog : allDogs){
+                allPets.add(dog);
+            }
+            for(Cat cat : allCats){
+                allPets.add(cat);
+            }
+            for(ExoticPet exoticPet : allExoticPets){
+                allPets.add(exoticPet);
+            }
 
             switch (choice1) {
                 case 1:
@@ -94,6 +108,13 @@ public class Main {
                 }
                     break;
                 case 4: // Check inventory
+                    System.out.println("Listing pets available for purchase or registration.");
+                    
+                    for(Pet pet : allPets){
+                        System.out.println(pet.toString());
+                    }
+                    //System.out.println("\n " + allPets);
+
                 
                     break;
                 case 5: // Link pet to owner
@@ -101,14 +122,14 @@ public class Main {
                     
                     scnr.nextLine();
                     String tempOwnerName = scnr.nextLine();
-                    Member petOwner = null;
-                    for (Member member : ps.getMemberList()){
+                    Member petOwner = null; // Null in place of 0
+                    for (Member member : ps.getMemberList()){ // Check all members and if their name = the input, they are the one we're registering
                         if(member.getName().equalsIgnoreCase(tempOwnerName)){
                             petOwner = member;
                             //break;
                         }
                     }
-                    if(petOwner == null){
+                    if(petOwner == null){ // if they're still null after that, it's because they're a premium member, so repeat the process (make sure PremiumMember extends Member)
                         for(PremiumMember premiumMember : ps.getPremiumMemberList()){
                             if(premiumMember.getName().equalsIgnoreCase(tempOwnerName)){
                                 petOwner = premiumMember;
@@ -116,15 +137,15 @@ public class Main {
                             }
                         }
                     }
-                    if(petOwner != null){
+                    if(petOwner != null){ // Once the pet owner is established, register a pet to them
                         System.out.println("What type of pet are you registering? D/C/E");
-                        String tempPetType = scnr.nextLine().toLowerCase();
-                        if(tempPetType.equalsIgnoreCase("d")){
+                        String tempPetType = scnr.nextLine().toLowerCase(); // remember to convert to lowercase or D != d
+                        if(tempPetType.equalsIgnoreCase("d")){ // if they are doing this for a dog.
                             ArrayList<Dog> availableDogs = ps.getAvailableDogs();
-                            if(availableDogs.size() == 0){
+                            if(availableDogs.size() == 0){ // If there are no dogs, they can't register the dog
                                 System.out.println("There are no dogs to register.");
                             }
-                            else{
+                            else{ // If there are dogs, get the one they want (by name) and add it to their list of dogs (petOwner.addDog(Dog))
                                 System.out.println("Pick a dog to register. ");
                                 for(int i = 0; i < availableDogs.size(); i++){
                                     Dog dog = availableDogs.get(i);
@@ -143,6 +164,54 @@ public class Main {
                             }
                             
                         }
+                        else if(tempPetType.equalsIgnoreCase("c")){ // do the same for a cat
+                            ArrayList<Cat> availableCats = ps.getAvailableCats();
+                            if(availableCats.size() == 0){
+                                System.out.println("There are no cats to register");
+                            }
+                            else{
+                                System.out.println("Pick a cat to register. ");
+                                for(int i = 0; i < availableCats.size(); i++){
+                                    Cat cat = availableCats.get(i);
+                                    System.out.println((i+1) + ". " + cat.getName() + " ID: " + cat.getID());
+                                }
+                                int choice = scnr.nextInt();
+                                if(choice >= 1 && choice <= availableCats.size()){
+                                    Cat chosenOne = availableCats.remove(choice -1);
+                                    petOwner.addCat(chosenOne);
+                                    System.out.println("Selected cat has been registered to: " + petOwner.getName());
+                                }
+                                else{
+                                    System.out.println("You have not selected a cat on the list, please try again.");
+                                }
+                            }
+
+                        }
+                        else if(tempPetType.equalsIgnoreCase("e")){
+                            ArrayList<ExoticPet> availableExoticPets = ps.getAvailableExoticPets();
+                            if(availableExoticPets.size() == 0){
+                                System.out.println("There are no exotic pets to register");
+                            }
+                            else{
+                                System.out.println("Pick an exotic pet to register");
+                                for(int i=0; i< availableExoticPets.size(); i++){
+                                    ExoticPet exoticPet = availableExoticPets.get(i);
+                                    System.out.println((i+1) + ". " + exoticPet.getName() + " ID: " + exoticPet.getID());
+                                }
+                                int choice = scnr.nextInt();
+                                if(choice >= 1 && choice <= availableExoticPets.size()){
+                                    ExoticPet chosenOne = availableExoticPets.remove(choice -1);
+                                    petOwner.addExoticPet(chosenOne);
+                                    System.out.println("Selected exotic pet has been registered to: " + petOwner.getName());
+                                }
+                                else{
+                                    System.out.println("You have not selected an exotic pet on the list, please try again.");
+                                }
+                            }
+                        }
+                        else{
+                            System.out.println("Please input D, C, or E.");
+                        }
 
                     }
                 
@@ -151,6 +220,34 @@ public class Main {
                 case 6:
                     System.out.println("Thanks for visiting!");
                     return;
+                case 7:
+                System.out.println("Please input two pets you wish to compare the weights of (by the pets ID)");
+                Pet tempPet01 = null;
+                Pet tempPet02 = null;
+                System.out.println("Input first pet: ");
+                int tempPetSelection = scnr.nextInt();
+                System.out.println("Input Second Pet: ");
+                int temp2PetSelection = scnr.nextInt();
+                for(Pet pet : allPets){
+                    if(tempPetSelection == pet.getID()){
+                        int tempPet01Index = allPets.indexOf(pet);
+                        tempPet01 = allPets.get(tempPet01Index);
+                        
+                                
+                            }
+                        
+                    
+                        }
+                for(Pet pet02 : allPets){
+                    if(temp2PetSelection == pet02.getID()){
+                        int tempPet02Index = allPets.indexOf(pet02);
+                        tempPet02 = allPets.get(tempPet02Index);
+                    }
+                }
+                if(tempPet01 != null && tempPet02 != null){
+                    tempPet01.compareTo(tempPet02);
+                }
+                break;
                 default:
                     System.out.println("Invalid choice, try again.");
             }

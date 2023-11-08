@@ -58,15 +58,22 @@ public abstract class Pet implements Comparable<Pet>{
         this.weight = weight;
     }
     public int compareTo(Pet o){
-        double sWeight = o.getWeight();
+        double sPrice = o.getPrice();
+        double iPrice = this.getPrice();
+        //double iPrice = i.getPrice();
         
-        if(sWeight > 50.0){
-            System.out.println("This dog is bigger than 50lbs");
+        if(sPrice > iPrice){
+            System.out.println("The Second Pet is more expensive");
             return 1;
         }
         else{
-            System.out.println("This dog is smaller than 50 lbs");
+            System.out.println("The first pet is more expensive");
             return 0;
         }
+    }
+    @Override
+    public String toString(){
+        String petString = "Name: " + this.getName() + " ID: " + this.getID() + " Price: $" + this.getPrice();
+        return petString;
     }
 }

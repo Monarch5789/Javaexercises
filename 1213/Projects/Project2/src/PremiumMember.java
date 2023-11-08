@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class PremiumMember extends Member{
     
-    private String name;
+    //private String name;
     private int memberID;
     private boolean newsletterSubscribed;
     private ArrayList<Dog> dogsOwned = new ArrayList<Dog>();
@@ -58,9 +58,9 @@ public class PremiumMember extends Member{
         return amountSpent;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    // public void setName(String name) {
+    //     this.name = name;
+    // }
 
     public void setMemberID(int memberID) {
         this.memberID = memberID;

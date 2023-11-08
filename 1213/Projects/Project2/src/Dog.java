@@ -18,4 +18,5 @@ public class Dog extends Pet {
     public void setBreed(String breed) {
         this.breed = breed;
     }
+
 }
