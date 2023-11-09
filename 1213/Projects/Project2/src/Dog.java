@@ -11,6 +11,10 @@ public class Dog extends Pet {
         this.breed = breed;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getBreed() {
         return breed;
     }

@@ -21,42 +21,95 @@ public abstract class Pet implements Comparable<Pet>{
 
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getPrice() {
         return price;
     }
+    
+    /** 
+     * @return int
+     */
     public int getID() {
         return ID;
     }
+    
+    /** 
+     * @param ID
+     */
     public void setID(int ID) {
         this.ID = ID;
     }
+    
+    /** 
+     * @param price
+     */
     public void setPrice(double price) {
         this.price = price;
     }
+    
+    /** 
+     * @return String
+     */
     public String getName() {
         return name;
     }
+    
+    /** 
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
+    
+    /** 
+     * @return String
+     */
     public String getSex() {
         return sex;
     }
+    
+    /** 
+     * @param sex
+     */
     public void setSex(String sex) {
         this.sex = sex;
     }
+    
+    /** 
+     * @return int
+     */
     public int getAge() {
         return age;
     }
+    
+    /** 
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
+    
+    /** 
+     * @return double
+     */
     public double getWeight() {
         return weight;
     }
+    
+    /** 
+     * @param weight
+     */
     public void setWeight(double weight) {
         this.weight = weight;
     }
+    
+    /** 
+     * @param o
+     * @return int
+     */
     public int compareTo(Pet o){
         double sPrice = o.getPrice();
         double iPrice = this.getPrice();
@@ -71,6 +124,10 @@ public abstract class Pet implements Comparable<Pet>{
             return 0;
         }
     }
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString(){
         String petString = "Name: " + this.getName() + " ID: " + this.getID() + " Price: $" + this.getPrice();

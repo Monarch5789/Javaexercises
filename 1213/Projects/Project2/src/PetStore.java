@@ -80,65 +80,126 @@ public class PetStore implements PetStoreSpecification{
 
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getNextPetID() {
         nextPetID++;
         return nextPetID - 1;
     }
     
+    
+    /** 
+     * @return int
+     */
     public static int getNextMemberID() {
         nextMemberID++;
         return nextMemberID - 1;
     }
 
 
+    
+    /** 
+     * @return String
+     */
     public String getStoreName() {
         return storeName;
     }
 
+    
+    /** 
+     * @param storeName
+     */
     public void setStoreName(String storeName) {
         this.storeName = storeName;
     }
 
+    
+    /** 
+     * @return ArrayList<Dog>
+     */
     public ArrayList<Dog> getAvailableDogs() {
         return availableDogs;
     }
 
+    
+    /** 
+     * @param availableDogs
+     */
     public void setAvailableDogs(ArrayList<Dog> availableDogs) {
         this.availableDogs = availableDogs;
     }
 
+    
+    /** 
+     * @return ArrayList<Cat>
+     */
     public ArrayList<Cat> getAvailableCats() {
         return availableCats;
     }
 
+    
+    /** 
+     * @param availableCats
+     */
     public void setAvailableCats(ArrayList<Cat> availableCats) {
         this.availableCats = availableCats;
     }
 
+    
+    /** 
+     * @return ArrayList<ExoticPet>
+     */
     public ArrayList<ExoticPet> getAvailableExoticPets() {
         return availableExoticPets;
     }
 
+    
+    /** 
+     * @param availableExoticPets
+     */
     public void setAvailableExoticPets(ArrayList<ExoticPet> availableExoticPets) {
         this.availableExoticPets = availableExoticPets;
     }
 
+    
+    /** 
+     * @return ArrayList<Member>
+     */
     public ArrayList<Member> getMemberList() {
         return memberList;
     }
 
+    
+    /** 
+     * @param memberList
+     */
     public void setMemberList(ArrayList<Member> memberList) {
         this.memberList = memberList;
     }
 
+    
+    /** 
+     * @return ArrayList<PremiumMember>
+     */
     public ArrayList<PremiumMember> getPremiumMemberList() {
         return premiumMemberList;
     }
 
+    
+    /** 
+     * @param premiumMemberList
+     */
     public void setPremiumMemberList(ArrayList<PremiumMember> premiumMemberList) {
         this.premiumMemberList = premiumMemberList;
     }
 
+    
+    /** 
+     * @param type
+     * @param index
+     */
     public void removePet(String type, int index) {
         if (type.equals("dog")) 
             availableDogs.remove(index);
@@ -149,6 +210,11 @@ public class PetStore implements PetStoreSpecification{
 
     }
 
+     
+     /** 
+      * @param name
+      * @param premium
+      */
      public void addNewMember(String name, boolean premium) {
         if (premium) {
             premiumMemberList.add(new PremiumMember(name,getNextMemberID(),false,false));
@@ -157,6 +223,10 @@ public class PetStore implements PetStoreSpecification{
         }
     }
 
+    
+    /** 
+     * @param Pets
+     */
     public void adoptionDrive(ArrayList<Pet> Pets){
         for(Pet x : Pets){
             if(x instanceof Cat){
@@ -172,6 +242,10 @@ public class PetStore implements PetStoreSpecification{
         }
     }
 
+    
+    /** 
+     * @return double
+     */
     public double inventoryValue(){
          double value = 0.0;
          double valueDogs = 0;

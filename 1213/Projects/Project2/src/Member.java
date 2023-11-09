@@ -23,56 +23,112 @@ public class Member {
         
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getName() {
         return name;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getMemberID() {
         return memberID;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isNewsletterSubscribed() {
         return newsletterSubscribed;
     }
 
+    
+    /** 
+     * @return ArrayList<Dog>
+     */
     public ArrayList<Dog> getDogsOwned() {
         return dogsOwned;
     }
 
+    
+    /** 
+     * @return ArrayList<Cat>
+     */
     public ArrayList<Cat> getCatsOwned() {
         return catsOwned;
     }
 
+    
+    /** 
+     * @return ArrayList<ExoticPet>
+     */
     public ArrayList<ExoticPet> getExoticPetsOwned() {
         return exoticPetsOwned;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getAmountSpent() {
         return amountSpent;
     }
 
+    
+    /** 
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    
+    /** 
+     * @param memberID
+     */
     public void setMemberID(int memberID) {
         this.memberID = memberID;
     }
 
+    
+    /** 
+     * @param newsletterSubscribed
+     */
     public void setNewsletterSubscribed(boolean newsletterSubscribed) {
         this.newsletterSubscribed = newsletterSubscribed;
     }
 
+    
+    /** 
+     * @param amountSpent
+     */
     public void setAmountSpent(double amountSpent) {
         this.amountSpent = this.amountSpent + amountSpent;
     }
      
+     
+     /** 
+      * @param dog
+      */
      public void addDog(Dog dog) {
          dogsOwned.add(dog);
      }
+     
+     /** 
+      * @param cat
+      */
      public void addCat(Cat cat) {
          catsOwned.add(cat);
      }
+     
+     /** 
+      * @param exoticPet
+      */
      public void addExoticPet(ExoticPet exoticPet) {
          exoticPetsOwned.add(exoticPet);
      }
