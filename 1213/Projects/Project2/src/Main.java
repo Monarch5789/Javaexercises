@@ -221,7 +221,7 @@ public class Main {
                     System.out.println("Thanks for visiting!");
                     return;
                 case 7:
-                System.out.println("Please input two pets you wish to compare the weights of (by the pets ID)");
+                System.out.println("Please input two pets you wish to compare the price of (by the pets ID)");
                 Pet tempPet01 = null;
                 Pet tempPet02 = null;
                 System.out.println("Input first pet: ");
