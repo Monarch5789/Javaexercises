@@ -113,6 +113,7 @@ public class Main {
                     for(Pet pet : allPets){
                         System.out.println(pet.toString());
                     }
+                    System.out.println("The total value of all pets combined is: " + ps.inventoryValue());
                     //System.out.println("\n " + allPets);
 
                 

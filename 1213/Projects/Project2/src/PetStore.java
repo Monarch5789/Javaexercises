@@ -255,18 +255,18 @@ public class PetStore implements PetStoreSpecification{
          ArrayList<Dog> availableDogs = getAvailableDogs();
          for(Dog dogs : availableDogs){
             double tempPrice = dogs.getPrice();
-            valueDogs = tempPrice;
+            valueDogs += tempPrice;
 
          }
          ArrayList<Cat> availableCats = getAvailableCats();
          for(Cat cats : availableCats){
             double tempPrice = cats.getPrice();
-            valueCats = tempPrice;
+            valueCats += tempPrice;
          }
          ArrayList<ExoticPet> availableExoticPets = getAvailableExoticPets();
          for(ExoticPet exoticPets : availableExoticPets){
             double tempPrice = exoticPets.getPrice();
-            valueExoticPets = tempPrice;
+            valueExoticPets += tempPrice;
          }
          value = valueCats + valueDogs + valueExoticPets;
          System.out.println(value);
