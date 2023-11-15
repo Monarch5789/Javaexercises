@@ -48,7 +48,7 @@ public class GPACalculator {
 
         // cacluate GPA - Divide the total quality points by the total credit hours.
         try{
-        double gpa = computeIntGPA(qualityPoints, totalCreditHrs);
+        double gpa = computeGPA(qualityPoints, totalCreditHrs);
 
         //Print user GPA info
         System.out.println("GPA: " + gpa);
