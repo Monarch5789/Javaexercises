@@ -38,11 +38,11 @@ public class Main {
 
         System.out.println(allStudents);
         System.out.println(allProfessors);
-
+    try{
         FileOutputStream fs = new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\lab12\\src\\ScholarshipCandidates.txt");
         PrintWriter outFS = new PrintWriter(fs);
         outFS.println("Our top candidates for the scholarship are: ");
-    try{
+    
         for(Student s : allStudents){
             if(s.getGPA() < 3.2){
                 System.out.println(s + " is ineligible");

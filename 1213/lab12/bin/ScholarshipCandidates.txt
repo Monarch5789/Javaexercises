@@ -1,1 +1,6 @@
 Our top candidates for the scholarship are: 
+Student - Kathrine Johnson Major: CS ID: 900 GPA: 4.0 |  is a top candidate!
+Student - Xavier Cato Major: CS ID: 900111222 GPA: 3.5 |  is a top candidate!
+Student - Grace Maxeem Major: Psychology ID: 903 GPA: 3.4 | is a middle candidate!
+Student - Roy Clay Major: Biology ID: 901 GPA: 3.2 | is a middle candidate!
+Student - Kimberly Bryant Major: Electrical Engineering ID: 902 GPA: 3.0 |  is ineligible
