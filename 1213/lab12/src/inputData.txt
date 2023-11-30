@@ -6,3 +6,95 @@ professor,Mary,Castro,300,CS,80000.0
 professor,Frank,Black,801,Math,85000.0
 student,Grace,Maxeem,903,Psychology,3.4,95
 professor,Kayla,Wilson,301,CS,95000.0
+student,Michael,Nguyen,904,Chemistry,3.7,88
+student,Olivia,Smith,905,History,3.9,92
+student,James,Anderson,906,English,3.8,91
+professor,David,Ramirez,302,Biology,82000.0
+student,Lily,Chen,907,Physics,3.6,89
+student,Alexander,Wong,908,CS,3.3,78
+student,Sophia,Johnson,909,Math,3.1,82
+professor,Emma,Evans,303,Electrical Engineering,90000.0
+professor,Liam,Gonzalez,804,CS,87000.0
+student,Ava,Williams,910,Economics,3.6,87
+student,Ethan,Brown,911,Sociology,3.5,83
+student,Charlotte,Davis,912,Political Science,3.8,94
+professor,Mia,Rodriguez,304,Psychology,92000.0
+student,Mason,Wilson,913,CS,3.9,96
+student,Harper,Martin,914,Chemistry,3.2,79
+student,Evelyn,Garcia,915,Biology,3.4,84
+professor,Noah,Martinez,805,Physics,88000.0
+professor,Sofia,Hernandez,306,CS,92000.0
+student,Logan,Lopez,916,Electrical Engineering,3.1,81
+student,William,Hall,917,CS,3.7,90
+student,Isabella,Young,918,Math,3.8,93
+professor,Lucas,Scott,807,Economics,89000.0
+student,Sofia,Clark,919,Sociology,3.6,86
+student,Mia,Lee,920,Political Science,3.9,97
+professor,Aiden,Nguyen,308,Psychology,94000.0
+student,Avery,Perez,921,CS,3.3,77
+student,Elijah,Turner,922,Chemistry,3.5,88
+student,Riley,Hernandez,923,Biology,3.1,83
+professor,Amelia,Moore,809,Physics,91000.0
+professor,Matthew,King,310,CS,98000.0
+student,Zoey,Green,924,Electrical Engineering,3.2,82
+student,Carter,Hill,925,CS,3.9,94
+student,Lincoln,Adams,926,Math,3.6,89
+professor,Harper,Hall,811,Economics,90000.0
+student,Stella,Wright,927,Sociology,3.4,85
+student,Nova,Morris,928,Political Science,3.7,96
+professor,Daniel,Lopez,312,Psychology,96000.0
+student,Leo,Ortiz,929,CS,3.8,92
+student,Lucy,Cook,930,Chemistry,3.3,80
+student,Jack,Rivera,931,Biology,3.5,87
+professor,Chloe,Young,813,Physics,93000.0
+professor,Asher,Adams,314,CS,100000.0
+student,Hudson,Hughes,932,Electrical Engineering,3.0,78
+student,Mila,Collins,933,CS,3.6,91
+student,Gabriel,Ward,934,Math,3.7,93
+professor,Ella,Ward,815,Economics,92000.0
+student,Sarah,Murphy,935,Sociology,3.5,84
+student,Grayson,Torres,936,Political Science,3.9,98
+professor,Nova,Baker,316,Psychology,98000.0
+student,Luna,Rivera,937,CS,3.4,86
+student,Angel,Hill,938,Chemistry,3.2,79
+student,Henry,Watson,939,Biology,3.6,88
+professor,Isaac,Garcia,817,Physics,94000.0
+professor,Emily,Cook,318,CS,102000.0
+student,Hazel,Brooks,940,Electrical Engineering,3.1,81
+student,Nathan,Peterson,941,CS,3.8,95
+student,Violet,Rossi,942,Math,3.9,97
+professor,Liam,James,819,Economics,95000.0
+student,Emma,Bell,943,Sociology,3.7,90
+student,Sebastian,Gomez,944,Political Science,3.8,96
+professor,Sophie,Wright,320,Psychology,99000.0
+student,Xander,Parker,945,CS,3.6,88
+student,Zoe,Hughes,946,Chemistry,3.4,83
+student,Abigail,Murphy,947,Biology,3.5,89
+professor,Owen,Martin,821,Physics,96000.0
+professor,Leah,Morris,322,CS,104000.0
+student,Amelia,Ward,948,Electrical Engineering,3.2,82
+student,Christian,Rogers,949,CS,3.9,96
+student,Eliana,Hill,950,Math,3.9,98
+professor,Aria,Anderson,823,Economics,96000.0
+student,Liam,Cooper,951,Sociology,3.8,92
+student,Audrey,Stewart,952,Political Science,3.9,99
+professor,Jacob,Perez,324,Psychology,100000.0
+student,Hailey,Gray,953,CS,3.5,87
+student,Natalie,Flores,954,Chemistry,3.3,80
+student,Julian,Ross,955,Biology,3.6,90
+professor,Harper,Turner,825,Physics,98000.0
+professor,Gabriel,Wood,326,CS,106000.0
+student,Tristan,Collins,956,Electrical Engineering,3.0,80
+student,Isabelle,Miller,966,CS,3.7,90
+student,Gabriella,Phillips,967,Math,3.8,95
+professor,Lucas,Adams,831,Economics,98000.0
+student,Austin,Campbell,968,Sociology,3.6,89
+student,Maxwell,Grayson,969,Political Science,3.9,98
+professor,Victoria,Wright,332,Psychology,104000.0
+student,Audrey,Rossi,970,CS,3.5,86
+student,Christopher,Harper,971,Chemistry,3.2,79
+student,Lillian,Turner,972,Biology,3.5,87
+professor,Emma,Hall,833,Physics,100000.0
+professor,Landon,Brooks,334,CS,110000.0
+student,Emilia,Nguyen,973,Electrical Engineering,3.1,82
+student,Sebastian,Stewart,974,CS,3.9,96

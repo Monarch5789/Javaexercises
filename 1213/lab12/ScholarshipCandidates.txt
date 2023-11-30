@@ -1,0 +1,68 @@
+Our top candidates for the scholarship are: 
+Student - Kathrine Johnson Major: CS ID: 900 GPA: 4.0 |  is a top candidate!
+Student - Sebastian Stewart Major: CS ID: 974 GPA: 3.9 |  is a top candidate!
+Student - Maxwell Grayson Major: Political Science ID: 969 GPA: 3.9 |  is a top candidate!
+Student - Audrey Stewart Major: Political Science ID: 952 GPA: 3.9 |  is a top candidate!
+Student - Eliana Hill Major: Math ID: 950 GPA: 3.9 |  is a top candidate!
+Student - Christian Rogers Major: CS ID: 949 GPA: 3.9 |  is a top candidate!
+Student - Violet Rossi Major: Math ID: 942 GPA: 3.9 |  is a top candidate!
+Student - Grayson Torres Major: Political Science ID: 936 GPA: 3.9 |  is a top candidate!
+Student - Carter Hill Major: CS ID: 925 GPA: 3.9 |  is a top candidate!
+Student - Mia Lee Major: Political Science ID: 920 GPA: 3.9 |  is a top candidate!
+Student - Mason Wilson Major: CS ID: 913 GPA: 3.9 |  is a top candidate!
+Student - Olivia Smith Major: History ID: 905 GPA: 3.9 |  is a top candidate!
+Student - Gabriella Phillips Major: Math ID: 967 GPA: 3.8 |  is a top candidate!
+Student - Liam Cooper Major: Sociology ID: 951 GPA: 3.8 |  is a top candidate!
+Student - Sebastian Gomez Major: Political Science ID: 944 GPA: 3.8 |  is a top candidate!
+Student - Nathan Peterson Major: CS ID: 941 GPA: 3.8 |  is a top candidate!
+Student - Leo Ortiz Major: CS ID: 929 GPA: 3.8 |  is a top candidate!
+Student - Isabella Young Major: Math ID: 918 GPA: 3.8 |  is a top candidate!
+Student - Charlotte Davis Major: Political Science ID: 912 GPA: 3.8 |  is a top candidate!
+Student - James Anderson Major: English ID: 906 GPA: 3.8 |  is a top candidate!
+Student - Isabelle Miller Major: CS ID: 966 GPA: 3.7 |  is a top candidate!
+Student - Emma Bell Major: Sociology ID: 943 GPA: 3.7 |  is a top candidate!
+Student - Gabriel Ward Major: Math ID: 934 GPA: 3.7 |  is a top candidate!
+Student - Nova Morris Major: Political Science ID: 928 GPA: 3.7 |  is a top candidate!
+Student - William Hall Major: CS ID: 917 GPA: 3.7 |  is a top candidate!
+Student - Michael Nguyen Major: Chemistry ID: 904 GPA: 3.7 |  is a top candidate!
+Student - Austin Campbell Major: Sociology ID: 968 GPA: 3.6 |  is a top candidate!
+Student - Julian Ross Major: Biology ID: 955 GPA: 3.6 |  is a top candidate!
+Student - Xander Parker Major: CS ID: 945 GPA: 3.6 |  is a top candidate!
+Student - Henry Watson Major: Biology ID: 939 GPA: 3.6 |  is a top candidate!
+Student - Mila Collins Major: CS ID: 933 GPA: 3.6 |  is a top candidate!
+Student - Lincoln Adams Major: Math ID: 926 GPA: 3.6 |  is a top candidate!
+Student - Sofia Clark Major: Sociology ID: 919 GPA: 3.6 |  is a top candidate!
+Student - Ava Williams Major: Economics ID: 910 GPA: 3.6 |  is a top candidate!
+Student - Lily Chen Major: Physics ID: 907 GPA: 3.6 |  is a top candidate!
+Student - Lillian Turner Major: Biology ID: 972 GPA: 3.5 |  is a top candidate!
+Student - Audrey Rossi Major: CS ID: 970 GPA: 3.5 |  is a top candidate!
+Student - Hailey Gray Major: CS ID: 953 GPA: 3.5 |  is a top candidate!
+Student - Abigail Murphy Major: Biology ID: 947 GPA: 3.5 |  is a top candidate!
+Student - Sarah Murphy Major: Sociology ID: 935 GPA: 3.5 |  is a top candidate!
+Student - Jack Rivera Major: Biology ID: 931 GPA: 3.5 |  is a top candidate!
+Student - Elijah Turner Major: Chemistry ID: 922 GPA: 3.5 |  is a top candidate!
+Student - Ethan Brown Major: Sociology ID: 911 GPA: 3.5 |  is a top candidate!
+Student - Xavier Cato Major: CS ID: 900111222 GPA: 3.5 |  is a top candidate!
+Student - Zoe Hughes Major: Chemistry ID: 946 GPA: 3.4 | is a middle candidate!
+Student - Luna Rivera Major: CS ID: 937 GPA: 3.4 | is a middle candidate!
+Student - Stella Wright Major: Sociology ID: 927 GPA: 3.4 | is a middle candidate!
+Student - Evelyn Garcia Major: Biology ID: 915 GPA: 3.4 | is a middle candidate!
+Student - Grace Maxeem Major: Psychology ID: 903 GPA: 3.4 | is a middle candidate!
+Student - Natalie Flores Major: Chemistry ID: 954 GPA: 3.3 | is a middle candidate!
+Student - Lucy Cook Major: Chemistry ID: 930 GPA: 3.3 | is a middle candidate!
+Student - Avery Perez Major: CS ID: 921 GPA: 3.3 | is a middle candidate!
+Student - Alexander Wong Major: CS ID: 908 GPA: 3.3 | is a middle candidate!
+Student - Christopher Harper Major: Chemistry ID: 971 GPA: 3.2 | is a middle candidate!
+Student - Amelia Ward Major: Electrical Engineering ID: 948 GPA: 3.2 | is a middle candidate!
+Student - Angel Hill Major: Chemistry ID: 938 GPA: 3.2 | is a middle candidate!
+Student - Zoey Green Major: Electrical Engineering ID: 924 GPA: 3.2 | is a middle candidate!
+Student - Harper Martin Major: Chemistry ID: 914 GPA: 3.2 | is a middle candidate!
+Student - Roy Clay Major: Biology ID: 901 GPA: 3.2 | is a middle candidate!
+Student - Emilia Nguyen Major: Electrical Engineering ID: 973 GPA: 3.1 |  is ineligible
+Student - Hazel Brooks Major: Electrical Engineering ID: 940 GPA: 3.1 |  is ineligible
+Student - Riley Hernandez Major: Biology ID: 923 GPA: 3.1 |  is ineligible
+Student - Logan Lopez Major: Electrical Engineering ID: 916 GPA: 3.1 |  is ineligible
+Student - Sophia Johnson Major: Math ID: 909 GPA: 3.1 |  is ineligible
+Student - Tristan Collins Major: Electrical Engineering ID: 956 GPA: 3.0 |  is ineligible
+Student - Hudson Hughes Major: Electrical Engineering ID: 932 GPA: 3.0 |  is ineligible
+Student - Kimberly Bryant Major: Electrical Engineering ID: 902 GPA: 3.0 |  is ineligible
