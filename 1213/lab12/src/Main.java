@@ -12,7 +12,7 @@ public class Main {
             String line;
             while(fileScanner.hasNext()){
                 line = fileScanner.nextLine();
-            String[] allValues = line.split(",");
+                String[] allValues = line.split(",");
             try{
             if(allValues[0].equalsIgnoreCase("Student")){
                 Student newStudent = new Student(allValues[1], allValues[2], Integer.parseInt(allValues[3]), allValues[4], Double.parseDouble(allValues[5]), Integer.parseInt(allValues[6]));
