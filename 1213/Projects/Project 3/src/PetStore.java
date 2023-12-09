@@ -18,6 +18,8 @@ public class PetStore implements PetStoreSpecification{
     private ArrayList<PremiumMember> premiumMemberList = new ArrayList<PremiumMember>();
     private static int nextPetID = 1;
     private static int nextMemberID = 1;
+    private ArrayList<Pet> purchasedPets = new ArrayList<Pet>();
+    private double dailySales = 0;
 
 
     public PetStore(String storeName) {
@@ -274,5 +276,17 @@ public class PetStore implements PetStoreSpecification{
          System.out.println(value);
          // get available dogs, cats, exotic pets, then get the number of each available and multiply by appropriate prices, then add and return that value
         return value;
+    }
+    public void addPurchasedPet(Pet p){
+        purchasedPets.add(p);
+    }
+    public ArrayList<Pet> getPurchasedPets(){
+        return purchasedPets;
+    }
+    public void setDailySales(double h){
+        this.dailySales = h;
+    }
+    public double getDailySales(){
+        return dailySales;
     }
 }

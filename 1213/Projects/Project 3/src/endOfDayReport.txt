@@ -1,0 +1,4 @@
+Product,Quantity,Total Sales
+Sold: Waffle for: 500.0
+New members registered: 0
+Total sales: 500.0

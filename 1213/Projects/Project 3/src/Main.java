@@ -12,14 +12,58 @@ public class Main {
     public static void main(String[] args) {
 
         
-
+        
         Scanner scnr = new Scanner(System. in);
         Scanner fileScanner;
         PetStore ps = new PetStore("Ai's Petstore");
         System.out.println("**** Welcome to " + ps.getStoreName() + "****");
         int newRegisteredUsersThisDay = 0;
+        //double totalSalesThisDay = ps.getDailySales();
+        // ArrayList<Pet> allPets;
+        // ArrayList<Cat> allCats;
+        // ArrayList<Dog> allDogs;
+        // ArrayList<ExoticPet> allExoticPets;
+        ArrayList<Pet> allPets = new ArrayList<Pet>();
+        ArrayList<Cat> allCats = ps.getAvailableCats();
+        ArrayList<Dog> allDogs = ps.getAvailableDogs();
+        ArrayList<ExoticPet> allExoticPets = ps.getAvailableExoticPets();
+        ArrayList<Member> allMembers = ps.getMemberList();
+        ArrayList<PremiumMember> allPremiumMembers = ps.getPremiumMemberList(); 
+        ps.setAvailableCats(allCats);
+        ps.setAvailableDogs(allDogs);
+        ps.setAvailableExoticPets(allExoticPets);
+        try{ 
+            fileScanner = new Scanner(new File("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\inventory.csv"));
+            String line;
+            while(fileScanner.hasNext()){
+                line = fileScanner.nextLine();
+                String[] values = line.split(",");
+                try{
+                    if(values[0].equalsIgnoreCase("class ExoticPet")){
+                        ExoticPet newPet = new ExoticPet(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
+                        allExoticPets.add(newPet);
+                    }
+                    else if(values[0].equalsIgnoreCase("class Dog")){
+                        Dog newDog = new Dog(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
+                        allDogs.add(newDog);
+                    }
+                    else if(values[0].equalsIgnoreCase("class Cat")){
+                        Cat newCat = new Cat(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
+                        allCats.add(newCat);
+                    }
+                }
+                catch(ArrayIndexOutOfBoundsException ex){
+                    System.out.println("Caught ArrayIndexOutOfBoundsException when closing output stream, try again.");
+                }
+            }
+
+            }
+            catch(FileNotFoundException ex){
+                System.out.println(" Caught FileNotFoundException for inputData.txt. Try again making sure the file name and path are correct.");
+            }
         while (true) {
-            
+            ArrayList<Pet> purchasedPets = ps.getPurchasedPets();
+            Double totalSalesThisDay = ps.getDailySales();
             System.out.println("Please select from one of the following menu otions");
             System.out.println("\t1. Adopt a new pet");
             System.out.println("\t2. Register a new member");
@@ -30,43 +74,9 @@ public class Main {
             System.out.println("\t7. Compare the price of two pets.");
 
             int choice1 = scnr.nextInt();
-            ArrayList<Pet> allPets = new ArrayList<Pet>();
-            ArrayList<Cat> allCats = ps.getAvailableCats();
-            ArrayList<Dog> allDogs = ps.getAvailableDogs();
-            ArrayList<ExoticPet> allExoticPets = ps.getAvailableExoticPets();
-            ArrayList<Member> allMembers = ps.getMemberList();
-            ArrayList<PremiumMember> allPremiumMembers = ps.getPremiumMemberList(); 
+            
 
-            try{ 
-                fileScanner = new Scanner(new File("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\inventory.csv"));
-                String line;
-                while(fileScanner.hasNext()){
-                    line = fileScanner.nextLine();
-                    String[] values = line.split(",");
-                    try{
-                        if(values[0].equalsIgnoreCase("class ExoticPet")){
-                            ExoticPet newPet = new ExoticPet(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
-                            allExoticPets.add(newPet);
-                        }
-                        else if(values[0].equalsIgnoreCase("class Dog")){
-                            Dog newDog = new Dog(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
-                            allDogs.add(newDog);
-                        }
-                        else if(values[0].equalsIgnoreCase("class Cat")){
-                            Cat newCat = new Cat(values[2], values[1], values[5], Integer.parseInt(values[6]), Double.parseDouble(values[7]), Integer.parseInt(values[3]), Double.parseDouble(values[4]));
-                            allCats.add(newCat);
-                        }
-                    }
-                    catch(ArrayIndexOutOfBoundsException ex){
-                        System.out.println("Caught ArrayIndexOutOfBoundsException when closing output stream, try again.");
-                    }
-                }
-
-            }
-            catch(FileNotFoundException ex){
-                System.out.println(" Caught FileNotFoundException for inputData.txt. Try again making sure the file name and path are correct.");
-            }
-
+            
             for(Dog dog : allDogs){
                 allPets.add(dog);
             }
@@ -76,6 +86,9 @@ public class Main {
             for(ExoticPet exoticPet : allExoticPets){
                 allPets.add(exoticPet);
             }
+            // ps.setAvailableCats(allCats);
+            // ps.setAvailableDogs(allDogs);
+            // ps.setAvailableExoticPets(allExoticPets);
 
             switch (choice1) {
                 case 1:
@@ -92,21 +105,28 @@ public class Main {
                     newRegisteredUsersThisDay += 1;
                     break;
                 case 3: // Adoption Drive
+                try{
                 ArrayList<Pet> newPets = new ArrayList<Pet>();
                 System.out.println("How many pets are being adopted?");
-                
                 int numAdoptionDrive = scnr.nextInt();
+                
+                //int numAdoptionDrive = Integer.parseInt(sNumAdoptionDrive);
                 for(int i = 0; i < numAdoptionDrive; i++){
                     System.out.println("Please input the new pets name");
                     scnr.nextLine();
                     String tempPetName = scnr.nextLine();
-                    System.out.println("Please input the new pets Sex: M/F");
+                    System.out.println("Please input the new pets Sex: M/F/Other");
                     String tempPetSex = scnr.nextLine().toLowerCase();
-                    if (tempPetSex == "m"){
+                    if (tempPetSex == "m" || tempPetSex == "f"){
+                        if(tempPetSex == "m"){
                         tempPetSex = "Male";
+                        }
+                        else if (tempPetSex == "f"){
+                            tempPetSex = "Female";
                     }
-                    else if (tempPetSex == "f"){
-                        tempPetSex = "Female";
+                }
+                    else{
+                    //tempPetSex = tempPetSex;
                     }
                     System.out.println("Please input the new pets age: ");
                     int tempPetAge = scnr.nextInt();
@@ -124,33 +144,48 @@ public class Main {
                         System.out.println("What breed of dog is this?");
                         String tempDogBreed = scnr.nextLine();
                         Dog newDog = new Dog(tempPetName, tempDogBreed, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
-                        newPets.add(newDog);
+                        //newPets.add(newDog);
+                        allDogs.add(newDog);
                     }
                     else if(tempPetSpecies.equalsIgnoreCase("c")){
                         System.out.println("What breed of cat is this? ");
                         String tempCatBreed = scnr.nextLine();
                         Cat newCat = new Cat(tempPetName, tempCatBreed, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
-                        newPets.add(newCat);
+                        //newPets.add(newCat);
+                        allCats.add(newCat);
                     }
                     else if(tempPetSpecies.equalsIgnoreCase("e")){
                         System.out.println("What species of exotic animal is this? ");
                         String tempExoticSpecies = scnr.nextLine();
                         ExoticPet newExoticPet = new ExoticPet(tempPetName, tempExoticSpecies, tempPetSex, tempPetAge, tempPetWeight, tempPetID, tempPetPrice);
-                        newPets.add(newExoticPet);
+                        //newPets.add(newExoticPet);
+                        allExoticPets.add(newExoticPet);
                     }
                     else{
                         System.out.println("That is not a valid input, please input D, C, or E");
                     }
                     ps.adoptionDrive(newPets);
-
-                    //Pet newPet = new Pet();
+                    updateInventoryFile(ps);
+                }
+                }
+                    catch(InputMismatchException ex){
+                        System.out.println("Caught InputMismatchException in adoptionDrive, try again.");
                 }
                     break;
                 case 4: // Check inventory
                     System.out.println("Listing pets available for purchase or registration.");
                     
-                    for(Pet pet : allPets){
-                        System.out.println(pet.toString());
+                    // for(Pet pet : allPets){
+                    //     System.out.println(pet.toString());
+                    // }
+                    for(Cat c : allCats){
+                        System.out.println("ID: " + c.getID() + " Cat - Name: " + c.getName() + " Breed: " + c.getBreed() + " Sex: " + c.getSex() + " Price: " + c.getPrice()  );
+                    }
+                    for(Dog d : allDogs){
+                        System.out.println("ID: " + d.getID() + " Dog - Name: " + d.getName() + " Breed: " + d.getBreed() + " Sex: " + d.getSex() + " Price: " + d.getPrice()  );
+                    }
+                    for(ExoticPet e : allExoticPets){
+                        System.out.println("ID: " + e.getID() + " Exotic Pet - Name: " + e.getName() + " Species: " + e.getSpecies() + " Sex: " + e.getSex() + " Price: " + e.getPrice()  );
                     }
                     System.out.println("The total value of all pets combined is: " + ps.inventoryValue());
                     //System.out.println("\n " + allPets);
@@ -260,41 +295,7 @@ public class Main {
                 case 6:
                     //System.out.println(newRegisteredUsersThisDay);
                     System.out.println("Thanks for visiting!");
-                    try {
-                    FileOutputStream fs = new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\inventory.csv");
-                    PrintWriter outFS = new PrintWriter(fs);
-                    //outFS.println("class,species,name,id,price,sex,age,weight");
-                    FileOutputStream fsMember = new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\members.csv");
-                    PrintWriter outFSMember = new PrintWriter(fsMember);
-                    FileOutputStream endOfDayReport = new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\endOfDayReport.csv");
-                    PrintWriter outEndofDayReport = new PrintWriter(endOfDayReport);
-                    for(Dog d : allDogs){
-                        outFS.println(d);
-                    }
-                    for(Cat c : allCats){
-                        outFS.println(c);
-                    }
-                    for(ExoticPet e : allExoticPets){
-                        outFS.println(e);
-                    }
-                    for(Member m : allMembers){
-                        outFSMember.println(m);
-                    }
-                    for(PremiumMember p : allPremiumMembers){
-                        outFSMember.println(p);
-                    }
-                    outEndofDayReport.println("Total new users registered today: " + newRegisteredUsersThisDay);
-
-            outEndofDayReport.close();
-            outFS.close();
-            outFSMember.close();
-            }
-            catch (FileNotFoundException ex) {
-                System.out.println("Caught FileNotFoundException for inventory.csv. Try again making sure the file name and path are correct.");
-            }
-            // catch(IOException ex){
-            //     System.out.println("Caught IOException when closing output stream. Try again.");
-            // }
+                    generateEndOfDayReport(purchasedPets, newRegisteredUsersThisDay, totalSalesThisDay);
                     return;
                 case 7:
                 System.out.println("Please input two pets you wish to compare the price of (by the pets ID)");
@@ -338,7 +339,7 @@ public class Main {
         System.out.println("\t3. Exotic Pets");
 
         int petTypeChoice = scnr.nextInt();
-
+        scnr.nextLine();
         // display inventory menu
         int itemNum = 1;
         if (petTypeChoice == 1) {
@@ -347,7 +348,7 @@ public class Main {
 
                 System.out.println("Which of the following dogs would you like to purchase?:");
 
-                for (Dog pet : inventory) {
+                for (Dog pet : petStore.getAvailableDogs()) {
                     System.out.println(
                         "\t" + itemNum + ". $" + pet.getPrice() + " - " + pet.getBreed() + "(" + pet.getName() +
                         ")"
@@ -383,15 +384,14 @@ public class Main {
             } else {
                 System.out.println("Sorry! we currently have no dogs available.");
             }
-
         }
         else if(petTypeChoice == 2){ // cats
             ArrayList<Cat> inventory = petStore.getAvailableCats();
             if (!inventory.isEmpty()) {
 
-                System.out.println("Which of the following dogs would you like to purchase?:");
+                System.out.println("Which of the following cats would you like to purchase?:");
 
-                for (Cat pet : inventory) {
+                for (Cat pet : petStore.getAvailableCats()) {
                     System.out.println(
                         "\t" + itemNum + ". $" + pet.getPrice() + " - " + pet.getBreed() + "(" + pet.getName() +
                         ")"
@@ -434,7 +434,7 @@ public class Main {
 
                 System.out.println("Which of the following dogs would you like to purchase?:");
 
-                for (ExoticPet pet : inventory) {
+                for (ExoticPet pet : petStore.getAvailableExoticPets()) {
                     System.out.println(
                         "\t" + itemNum + ". $" + pet.getPrice() + " - " + pet.getSpecies() + "(" + pet.getName() +
                         ")"
@@ -458,6 +458,7 @@ public class Main {
                     if (doneShopping == 1) {
                         //System.out.println("TO DO - CHEKOUT ");
                         checkout(petStore, scnr, cart);
+                        updateInventoryFile(petStore);
                     } else if (doneShopping == 2) { // more shopping
                         purchase(petStore, scnr, cart); // recursively call purchase(...) until done
                     } else {
@@ -471,6 +472,7 @@ public class Main {
                 System.out.println("Sorry! we currently have no exotic pets available.");
             }
         }
+        //updateInventoryFile(petStore);
     }
 
     private static void checkout(PetStore petStore, Scanner scnr, ArrayList<Pet> cart) {
@@ -478,6 +480,11 @@ public class Main {
         double total = 0;
         for (Pet pet : cart) {
             total += pet.getPrice();
+            //purchasedPets.add(pet);
+            petStore.addPurchasedPet(pet);
+            double tempDollars = petStore.getDailySales();
+            tempDollars += pet.getPrice();
+            petStore.setDailySales(tempDollars);
         }
         System.out.println(
             "Your total comes to " + total + ". \nPlease select which member is making this" +
@@ -504,7 +511,7 @@ public class Main {
         if (memberSelect > petStore.getMemberList().size() + petStore.getPremiumMemberList().size() + 1) { // invalid selection
             System.out.println("Invalid Selection");
             checkout(petStore, scnr, cart); // recursive call if valid user input
-
+            //updateInventoryFile(petStore);
         } else { // valid selection
             if (memberSelect == (petStore.getMemberList().size() + petStore.getPremiumMemberList().size()) + 1) { // adding a new member
                 boolean premium = registerNewMember(petStore, scnr);
@@ -546,25 +553,23 @@ public class Main {
                 purchaser.setAmountSpent(total);
                 System.out.println("Your purchase total was: " + total);
                 System.out.println("Congrats on your purchase " + purchaser.getName());
-
+                updateInventoryFile(petStore);
             }
+            //updateInventoryFile(petStore);
         }
     }
-
     private static boolean registerNewMember(PetStore petStore, Scanner scnr) {
         // prompt user to select membership type
         System.out.println("Let's get you registered as a new Member!");
         System.out.println( "Would you like to register as a free-tier or premium member?");
         System.out.println("\t1. Free-tier");
         System.out.println("\t2. Premium");
-
         // user selection
         int choice1 = scnr.nextInt();
         // if user selects a wrong choice 
         if (choice1 > 2 || choice1 < 1) {
             System.out.println("Invalid choice.");
             registerNewMember(petStore, scnr); // try again
-
         } else {
             // prompt user for name 
             System.out.println("Please enter your name:");
@@ -581,5 +586,42 @@ public class Main {
         }
         return false;
     }
+    public static void updateInventoryFile(PetStore petstore){
+        try{
+            PrintWriter outFS = new PrintWriter(new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\inventory.csv"));
 
+            for(Dog d : petstore.getAvailableDogs()){
+                outFS.println(d.toString());
+            }
+
+            for(Cat c : petstore.getAvailableCats()){
+                outFS.println(c.toString());
+            }
+
+            for(ExoticPet e : petstore.getAvailableExoticPets()){
+                outFS.println(e.toString());
+            }
+            outFS.close();
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Caught FileNotFoundException for inventory.csv");
+        }   
+    }
+    public static void generateEndOfDayReport(ArrayList<Pet> purchasedPets, int newMembersRegistered, double totalSales){
+        try{
+            PrintWriter outFS = new PrintWriter(new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\endOfDayReport.txt"));
+            outFS.println("Product,Quantity,Total Sales");
+            for(Pet p : purchasedPets){
+                outFS.println("Sold: " + p.getName() + " for: $" + p.getPrice());
+            }
+
+            outFS.println("New members registered: " + newMembersRegistered);
+
+            outFS.println("Total sales: $" + totalSales);
+            outFS.close();
+        }
+        catch(FileNotFoundException ex){
+            System.out.println("Caught FileNotFoundException for endOfDayReport.txt");
+        }
+    }
 }

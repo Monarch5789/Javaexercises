@@ -1,2 +1,7 @@
-class Dog,Corgi,Poe,3,450.0,m,3,35.0
-class Dog,German Shepherd,Waffle,1,500.0,f,12,85.0
+class Dog,German Shepherd,Waffle,1,500.0,Female,12,85.0
+class Dog,Corgi,Poe,2,450.0,Male,3,35.0
+class Cat,Orange Tabby,Karma,3,200.0,Female,6,15.0
+class Cat,Maine Coon,Kit,4,150.0,Male,6,18.0
+class Cat,siamese,Joey,5,24.99,f,2,24.1
+class ExoticPet,Bearded Dragon,Pancake,5,75.0,Male,6,0.8
+class ExoticPet,Ball Python,Noodle,6,95.0,Male,4,2.0
