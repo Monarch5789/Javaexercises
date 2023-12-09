@@ -72,7 +72,7 @@ public class Main {
             System.out.println("\t5. Register new pet to Owner profile");
             System.out.println("\t6. Exit");
             System.out.println("\t7. Compare the price of two pets.");
-
+        try{
             int choice1 = scnr.nextInt();
             
 
@@ -89,7 +89,7 @@ public class Main {
             // ps.setAvailableCats(allCats);
             // ps.setAvailableDogs(allDogs);
             // ps.setAvailableExoticPets(allExoticPets);
-
+            
             switch (choice1) {
                 case 1:
                     System.out.println("-----------------------------------");
@@ -108,8 +108,9 @@ public class Main {
                 try{
                 ArrayList<Pet> newPets = new ArrayList<Pet>();
                 System.out.println("How many pets are being adopted?");
+                //scnr.next();
                 int numAdoptionDrive = scnr.nextInt();
-                
+                //scnr.next();
                 //int numAdoptionDrive = Integer.parseInt(sNumAdoptionDrive);
                 for(int i = 0; i < numAdoptionDrive; i++){
                     System.out.println("Please input the new pets name");
@@ -170,6 +171,7 @@ public class Main {
                 }
                     catch(InputMismatchException ex){
                         System.out.println("Caught InputMismatchException in adoptionDrive, try again.");
+                        scnr.nextLine();
                 }
                     break;
                 case 4: // Check inventory
@@ -328,9 +330,15 @@ public class Main {
                 default:
                     System.out.println("Invalid choice, try again.");
             }
+        }catch(InputMismatchException ex){
+        System.out.println("Caught InputMismatchException");
+        scnr.nextLine();
         }
-        
+        }
     }
+    
+        
+    
 
     private static void purchase(PetStore petStore, Scanner scnr, ArrayList<Pet> cart) {
         System.out.println("What type of pet are you here to purchase?");
@@ -588,7 +596,7 @@ public class Main {
     }
     public static void updateInventoryFile(PetStore petstore){
         try{
-            PrintWriter outFS = new PrintWriter(new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\inventory.csv"));
+            PrintWriter outFS = new PrintWriter(new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\BookInventoryDay2.csv"));
 
             for(Dog d : petstore.getAvailableDogs()){
                 outFS.println(d.toString());
@@ -610,7 +618,7 @@ public class Main {
     public static void generateEndOfDayReport(ArrayList<Pet> purchasedPets, int newMembersRegistered, double totalSales){
         try{
             PrintWriter outFS = new PrintWriter(new FileOutputStream("C:\\TNGRP\\Javaexercises\\1213\\Projects\\Project 3\\src\\endOfDayReport.txt"));
-            outFS.println("Product,Quantity,Total Sales");
+            outFS.println("Product, Quantity, Total Sales");
             for(Pet p : purchasedPets){
                 outFS.println("Sold: " + p.getName() + " for: $" + p.getPrice());
             }
